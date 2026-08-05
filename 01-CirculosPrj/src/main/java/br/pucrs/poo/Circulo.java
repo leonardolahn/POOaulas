@@ -3,23 +3,23 @@ package br.pucrs.poo;
 public class Circulo
 {
     private double raio;
+    private Ponto centro;
 
     public Circulo()
     {
         this.raio = 1;
+        this.centro = new Ponto(0, 0);
     }
 
-    public Circulo(Ponto umX, Ponto umY, double raio)
+    public Circulo(double umX, double umY, double raio)
     {
-        this.coordX = umX;
-        this.coordY = umY;
         this.raio = raio;
+        this.centro = new Ponto(umX, umY);
     }
 
-    public void mover(Ponto novoX, Ponto novoY)
+    public void mover(double novoX, double novoY)
     {
-        this.coordX = novoX;
-        this.coordY = novoY;
+        this.centro = new Ponto(novoX, novoY);
     }
 
     public void zoom(double fator)
@@ -32,9 +32,11 @@ public class Circulo
         return Math.PI * Math.pow(raio, 2);
     }
 
+    @Override
     public String toString()
     {
-        return "Raio: " + raio;
+        return "Centro do círculo: " + centro +
+               "\nRaio: " + raio;
     }
 }
 
