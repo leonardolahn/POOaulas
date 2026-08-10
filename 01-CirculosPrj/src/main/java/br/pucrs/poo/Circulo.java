@@ -7,19 +7,23 @@ public class Circulo
 
     public Circulo()
     {
-        this.raio = 1;
         this.centro = new Ponto(0, 0);
+        this.raio = 1;
     }
 
     public Circulo(double umX, double umY, double raio)
     {
-        this.raio = raio;
         this.centro = new Ponto(umX, umY);
+        this.raio = raio;
     }
 
     public void mover(double novoX, double novoY)
     {
-        this.centro = new Ponto(novoX, novoY);
+        //1. criar um novo Ponto
+        //this.centro = new Ponto(novoX, novoY);
+        //ou
+        //2. usar o mover do Ponto
+        centro.mover(novoX, novoY);
     }
 
     public void zoom(double fator)
@@ -35,7 +39,7 @@ public class Circulo
     @Override
     public String toString()
     {
-        return "Centro do círculo: " + centro +
+        return "Centro do círculo: " + centro.toString() +
                "\nRaio: " + raio;
     }
 }

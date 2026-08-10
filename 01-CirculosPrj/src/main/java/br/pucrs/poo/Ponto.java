@@ -10,10 +10,10 @@ public class Ponto
         this.coordY = umY;
     }
 
-    public void mover(double umX, double umY)
+    public void mover(double novoX, double novoY)
     {
-        this.coordX = umX;
-        this.coordY = umY;
+        this.coordX = novoX;
+        this.coordY = novoY;
     }
 
     @Override
