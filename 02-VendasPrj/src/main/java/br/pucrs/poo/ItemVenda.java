@@ -5,10 +5,10 @@ public class ItemVenda
     private Produto prod;
     private int quantidade;
 
-    public ItemVenda(Produto umProd, int umaQtd)
+    public ItemVenda(int umaQtd, Produto umProd)
     {
-        this.prod = umProd;
         this.quantidade = umaQtd;
+        this.prod = umProd;
     }
 
     public double getValor()
