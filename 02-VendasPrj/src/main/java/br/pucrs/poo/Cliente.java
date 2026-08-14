@@ -3,27 +3,27 @@ package br.pucrs.poo;
 public class Cliente
 {
     private String nome;
-    private String codigo;
+    private String cpf;
 
-    public Cliente(String nome, String codigo)
+    public Cliente(String nome, String cpf)
     {
         this.nome = nome;
-        this.codigo = codigo;
+        this.cpf = cpf;
     }
 
     public String getNome()
     {
-        return this.nome;
+        return nome;
     }
-    public String getCodigo()
+    public String getCpf()
     {
-        return this.codigo;
+        return cpf;
     }
 
     @Override
     public String toString()
     {
-        return String.format("Nome: %s%nCódigo: %s", nome, codigo);
+        return String.format("Nome: %s%nCPF: %s", nome, cpf);
     }
 }
 

@@ -4,18 +4,18 @@ import java.util.List;
 
 public class Venda
 {
-    private Cliente cliente;
     List<ItemVenda> itens;
+    private Cliente cliente;
 
-    public Venda(Cliente cliente)
+    public Venda()
     {
-        this.cliente = cliente;
         this.itens = new ArrayList<>();
+        this.cliente = cliente;
     }
 
-    public void inserir(int umaQtde, Produto umProd)
+    public void inserir(int umaQtde, Produto prod)
     {
-        ItemVenda item = new ItemVenda(umaQtde, umProd);
+        ItemVenda item = new ItemVenda(umaQtde, prod);
         itens.add(item);
     }
 
@@ -26,7 +26,7 @@ public class Venda
 
     public double valorTotal()
     {
-        double valorTotal = 0;
+        int valorTotal = 0;
         for (ItemVenda item : itens)
         {
             valorTotal += item.getValor();
@@ -37,6 +37,6 @@ public class Venda
     @Override
     public String toString()
     {
-        return String.format("===NOTA FISCAL=== %nCliente: %s%nItens da Compra: %s%nValor Total: %s%n", cliente, itens, valorTotal());
+        return String.format("===NOTA FISCAL===%nCliente: %s%nItens da venda: %s%nValor Total: %.2f", cliente, itens, valorTotal());
     }
 }

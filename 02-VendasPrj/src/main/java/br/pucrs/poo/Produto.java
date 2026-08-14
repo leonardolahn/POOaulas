@@ -15,20 +15,20 @@ public class Produto
 
     public int getCodigo()
     {
-        return this.codigo;
+        return codigo;
     }
     public String getNome()
     {
-        return this.nome;
+        return nome;
     }
     public double getPreco()
     {
-        return this.preco;
+        return preco;
     }
 
     @Override
     public String toString()
     {
-        return String.format("Código: %s%nNome: %s%nPreço: %s", codigo, nome, preco);
+        return String.format("Código: %d%nNome: %s%nPreço: %.2f", codigo, nome, preco);
     }
 }

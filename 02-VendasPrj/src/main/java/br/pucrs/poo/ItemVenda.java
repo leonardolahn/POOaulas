@@ -5,20 +5,20 @@ public class ItemVenda
     private Produto prod;
     private int quantidade;
 
-    public ItemVenda(int umaQtd, Produto umProd)
+    public ItemVenda(int umaQtde, Produto umProd)
     {
-        this.quantidade = umaQtd;
+        this.quantidade = umaQtde;
         this.prod = umProd;
     }
 
     public double getValor()
     {
-        return prod.getPreco() * quantidade;
+        return quantidade * prod.getPreco();
     }
 
     @Override
     public String toString()
     {
-        return String.format("Produto: %s%nQuantidade: %s", prod, quantidade);
+        return String.format("Produto: %s%nQuantidade: %d", quantidade, prod);
     }
 }
