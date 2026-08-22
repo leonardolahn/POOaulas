@@ -16,6 +16,11 @@ public class ItemVenda
         return quantidade * prod.getPreco();
     }
 
+    public String getNome()
+    {
+        return prod.getNome();
+    }
+
     @Override
     public String toString()
     {
