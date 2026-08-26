@@ -6,7 +6,7 @@ public class CadastroFuncionarios {
     private ArrayList<Funcionario> funcionarios;
 
     private static CadastroFuncionarios instance;
-
+    
     public static CadastroFuncionarios getInstance() {
         if (instance == null) {
             instance = new CadastroFuncionarios();

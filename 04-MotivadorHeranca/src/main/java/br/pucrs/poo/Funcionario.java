@@ -9,7 +9,7 @@ public class Funcionario{
     public Funcionario(String matricula, String nome, double salarioBruto){
         this.matricula = matricula;
         this.nome = nome;
-        this. salarioBruto = salarioBruto;
+        this.salarioBruto = salarioBruto;
     }
 
 	public String getMatricula() {
