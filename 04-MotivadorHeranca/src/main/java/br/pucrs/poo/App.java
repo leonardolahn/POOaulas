@@ -8,7 +8,6 @@ public class App {
 
         TerminalConsulta tc = new TerminalConsulta();
         tc.menu();
-
         // new TerminalConsulta().menu();
     }
 }

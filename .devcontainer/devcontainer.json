@@ -1,12 +1,12 @@
 {
-  "name": "Java 25 Classroom",
+  "name": "Java 21 Classroom",
   "build": {
     "dockerfile": "Dockerfile"
   },
   "features": {
     "ghcr.io/devcontainers/features/common-utils:2": {},
     "ghcr.io/devcontainers/features/java:1": {
-      "version": "25",
+      "version": "21",
       "installMaven": true,
       "installGradle": false
     },
@@ -31,7 +31,7 @@
       "settings": {
         "java.configuration.runtimes": [
           {
-            "name": "JavaSE-25",
+            "name": "JavaSE-21",
             "path": "/usr/local/sdkman/candidates/java/current",
             "default": true
           }
