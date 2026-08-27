@@ -6,7 +6,7 @@ public class CadastroFuncionarios {
     private ArrayList<Funcionario> funcionarios;
 
     private static CadastroFuncionarios instance;
-    
+
     public static CadastroFuncionarios getInstance() {
         if (instance == null) {
             instance = new CadastroFuncionarios();
@@ -48,5 +48,12 @@ public class CadastroFuncionarios {
         funcionarios.add(new Funcionario("1004", "Lala Pata", 4220.0));
         funcionarios.add(new Funcionario("1005", "Lele Pata", 1283.0));
         funcionarios.add(new Funcionario("1007", "Lili Pata", 12438.0));
+        funcionarios.add(new FuncionarioRisco("1008", "Bob Esponja", 10000.0, CategoriasRisco.RISCO_BAIXO));
+        funcionarios.add(new FuncionarioRisco("1009", "Patrick", 10000.0, CategoriasRisco.RISCO_ALTO));
+        funcionarios.add(new FuncionarioRisco("1010", "Lula Molusco", 10000.0, CategoriasRisco.SEM_RISCO));
+        funcionarios.add(new Pesquisador("1111", "Daniel", 10000.0, 1));
+        funcionarios.add(new Pesquisador("1112", "João", 10000.0, 2));
+        funcionarios.add(new Pesquisador("1113", "Leonardo", 10000.0, 3));
+
     }
 }

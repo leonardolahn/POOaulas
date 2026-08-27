@@ -3,24 +3,29 @@ package br.pucrs.poo;
 public class FuncionarioRisco extends Funcionario
 {
     // 1. Atributo novo: qual o tipo e nome?
-
+    private CategoriasRisco categorias;
 
     // 2. Construtor: quais parâmetros recebe?
-    public FuncionarioRisco(/* ... */)
+    public FuncionarioRisco(String matricula, String nome,
+                            double salarioBruto, CategoriasRisco categorias)
     {
-        super(/* quais argumentos passam pra Funcionario? */);
-        // atribuir o atributo novo aqui
+        super(matricula, nome, salarioBruto);
+        this.categorias = categorias;
     }
 
     // 3. Sobrescrita do cálculo do salário líquido
     public double getSalarioLiquido()
     {
-        // usa super.getSalarioLiquido() e acrescenta 25%
+        // usar super.getSalarioLiquido() e acrescenta 25%
+        return super.getSalarioLiquido() * 1.25;
     }
 
     // 4. Sobrescrita do toString
+    @Override
     public String toString()
     {
-        // usa super.toString() e acrescenta a info da categoria de risco
+        // usar super.toString() e acrescenta a info da categoria de risco
+        return super.toString() +
+               "\nCategorias de Risco: " + categorias;
     }
 }
