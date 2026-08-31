@@ -1,0 +1,2 @@
+Classe abstract -> não pode ter objetos criados
+Método abstract -> todas as classes relacionadas devem ter este método inicializado

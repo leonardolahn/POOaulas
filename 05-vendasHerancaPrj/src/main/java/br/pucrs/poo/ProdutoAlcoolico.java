@@ -1,7 +1,5 @@
 package br.pucrs.poo;
 
-import br.pucrs.poo.Produto;
-
 public class ProdutoAlcoolico extends Produto
 {
     //static significa que a variável pertence

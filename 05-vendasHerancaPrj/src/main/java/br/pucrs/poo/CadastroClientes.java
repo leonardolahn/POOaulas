@@ -43,23 +43,6 @@ public class CadastroClientes {
         return null;
     }
 
-    // public Cliente pesquisar(String cod) {
-    // for (Cliente cli : lista) {
-
-    // // ruim!!!
-    // // if (cli instanceof ClientePF) {
-    // // ClientePF pf = (ClientePF)cli;
-    // // if ( pf.getCPF().equals(cod) ) {
-    // // //if ( ((ClientePF)cli).getCPF().equals(cod) ) {
-    // // return cli;
-    // // }
-    // // }
-    // if (cli.getID().equals(cod))
-    // return cli;
-
-    // }
-    // return null;
-    // }
 
     public String toString() {
         /*
