@@ -4,7 +4,7 @@ public class ProdutoAlcoolico extends Produto
 {
     //static significa que a variável pertence
     //à classe ProdutoAlcoolico como um todo, e não a cada objeto individual
-    private static double taxaTrago;
+    private static double impostoAlcool;
 
     public ProdutoAlcoolico(int umCodigo, String umNome, double umPreco)
     {
@@ -14,18 +14,22 @@ public class ProdutoAlcoolico extends Produto
     @Override
     public double getPreco()
     {
-        return super.getPreco() * (1 + taxaTrago);
+        return super.getPreco() * (1 + impostoAlcool);
     }
 
-    @Override
-    public void setPreco(double umPreco)
+    public static double getImpostoAlcool()
     {
-        super.setPreco(umPreco / (1 + taxaTrago));
+        return impostoAlcool;
+    }
+
+    public static void setImpostoAlcool(double novoValor)
+    {
+        impostoAlcool = novoValor;
     }
 
     @Override
     public String toString()
     {
-        return super.toString() + "\nTaxa Trago: " + taxaTrago;
+        return super.toString() + "\nTaxa Trago: " + impostoAlcool;
     }
 }

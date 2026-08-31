@@ -24,6 +24,6 @@ public class ItemVenda
     @Override
     public String toString()
     {
-        return String.format("Produto: %s%nQuantidade: %d", quantidade, prod);
+        return String.format("Quantidade: %d%nProduto: %s", quantidade, prod);
     }
 }

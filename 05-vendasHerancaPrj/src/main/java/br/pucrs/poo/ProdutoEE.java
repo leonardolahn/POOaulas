@@ -1,4 +1,5 @@
 package br.pucrs.poo;
+import java.time.LocalDate;
 
 public class ProdutoEE extends Produto
 {
@@ -13,6 +14,14 @@ public class ProdutoEE extends Produto
     public int getDiasGarantia()
     {
         return diasGarantia;
+    }
+
+    public String getGarantia()
+    {
+        LocalDate dataAtual = LocalDate.now();
+        LocalDate dataVencimento = dataAtual.plusDays(diasGarantia);
+        return String.format("Nome do Produto: %s%nDias de Garantia: %d%nData Atual: %s%nData de Vencimento: %s%n",
+                             super.getNome(), diasGarantia, dataAtual, dataVencimento);
     }
 
     @Override
