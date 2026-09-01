@@ -30,6 +30,14 @@ public class ProdutoAlcoolico extends Produto
     @Override
     public String toString()
     {
-        return super.toString() + "\nTaxa Trago: " + impostoAlcool;
+    return String.format(
+            "%s\n" +
+            "Preço base: R$ %.2f\n" +
+            "Imposto sobre álcool: %.2f%%\n" +
+            "Preço com imposto: R$ %.2f",
+            super.toString(),
+            super.getPreco(),
+            impostoAlcool * 100,
+            getPreco());
     }
 }

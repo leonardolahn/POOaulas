@@ -20,13 +20,19 @@ public class ProdutoEE extends Produto
     {
         LocalDate dataAtual = LocalDate.now();
         LocalDate dataVencimento = dataAtual.plusDays(diasGarantia);
-        return String.format("Nome do Produto: %s%nDias de Garantia: %d%nData Atual: %s%nData de Vencimento: %s%n",
-                             super.getNome(), diasGarantia, dataAtual, dataVencimento);
+        return String.format(
+                "Dias de garantia- %d\n" +
+                "Data atual- %s\n" +
+                "Data de vencimento- %s",
+                diasGarantia,
+                dataAtual,
+                dataVencimento
+        );
     }
 
     @Override
     public String toString()
     {
-        return super.toString() + "\nDias de Garantia: " + diasGarantia;
+        return super.toString();
     }
 }
