@@ -33,6 +33,6 @@ public class ProdutoEE extends Produto
     @Override
     public String toString()
     {
-        return super.toString();
+        return String.format("%s - Garantia %d dias", super.toString(), diasGarantia);
     }
 }
