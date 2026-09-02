@@ -4,6 +4,7 @@ public abstract class Imovel
     private String proprietario;
     private int areaConstruida;
     private Geo geo;
+    private static double VR;
 
     public Imovel(String prop, int area, Geo geo)
     {
@@ -17,7 +18,22 @@ public abstract class Imovel
         return proprietario;
     }
 
-    public abstract calculaImposto();
+    public int getAreaConstruida()
+    {
+        return areaConstruida;
+    }
+
+    public static double getVR()
+    {
+        return VR;
+    }
+
+    public static void setVR(double novoVR)
+    {
+        VR = novoVR;
+    }
+
+    public abstract double calculaImposto();
 
     @Override
     public String toString()
@@ -25,7 +41,7 @@ public abstract class Imovel
         return String.format(
             "Proprietário: %s\n" +
             "Área Construída: %d\n" +
-            "Coordenadas Geográficas: %s",
+            "Geolocalização: %s",
             proprietario,
             areaConstruida,
             geo.toString()
