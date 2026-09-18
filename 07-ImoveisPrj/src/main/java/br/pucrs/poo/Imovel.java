@@ -8,6 +8,7 @@ public abstract class Imovel
 
     public Imovel(String prop, int area, Geo geo)
     {
+        
         this.proprietario = prop;
         this.areaConstruida = area;
         this.geo = geo;

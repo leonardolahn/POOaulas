@@ -29,13 +29,21 @@ public class CadastroImoveis
             aux.append("\n\n");
             totalImpostos += imposto;
         }
-        aux.append("Total de impostos a ser cobrado: ")
+        aux.append("Total de impostos a ser cobrado: ");
         aux.append(totalImpostos);
         return aux.toString();
     }
 
     public String listar(String nome)
     {
-        
+        StringBuilder aux = new StringBuilder("===Dados do imóvel===\n\n");
+        for (Imovel imovel : lista)
+        {
+            if (imovel.getProprietario().equalsIgnoreCase(nome))
+            {
+                System.out.println(imovel.toString());
+            }
+        }
+        return aux.toString();
     }
 }
