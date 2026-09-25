@@ -4,6 +4,7 @@ package br.pucrs.poo;
  * Nem toda forma de pagamento suporta estorno — por isso isto é uma interface,
  * e não um método da classe abstrata Pagamento. (Dada pronta, não precisa alterar.)
  */
-public interface Estornavel {
+public interface Estornavel
+{
     boolean estornar();
 }

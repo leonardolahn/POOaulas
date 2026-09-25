@@ -8,6 +8,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
+        // List<variável dos objetos>nomeDaLista = new ArrayList<>();
         List<Pagamento> pagamentos = new ArrayList<>();
         pagamentos.add(new Pix("TX001", 150.00, LocalDate.of(2026, 3, 10)));
         pagamentos.add(new CartaoCredito("TX002", 899.90, LocalDate.of(2026, 3, 12), 6));
@@ -20,7 +21,7 @@ public class Main {
 
         // TODO 4: percorra a lista chamando enviarNotificacao() em cada pagamento,
         // tratando-os de forma polimórfica (sem checar o tipo de cada um).
-        for (Pagamento p : pagamentos)
+        for (Pagamento p: pagamentos)
         {
             p.enviarNotificacao();
         }
@@ -37,7 +38,7 @@ public class Main {
         // e ordene a lista com ele. Duas formas possíveis:
         //   Collections.sort(pagamentos, comparator);
         //   pagamentos.sort(Comparator.comparing(Pagamento::getData));
-        Collections.sort(pagamentos, new ComparadorPorData());
+        pagamentos.sort(Comparator.comparing(Pagamento::getData));
         for (Pagamento p : pagamentos)
         {
             System.out.println(p);

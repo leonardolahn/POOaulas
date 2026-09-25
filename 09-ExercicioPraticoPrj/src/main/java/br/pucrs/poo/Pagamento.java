@@ -7,8 +7,13 @@ import java.time.LocalDate;
  * Reúne o que toda forma de pagamento tem em comum (dados + notificação + ordenação);
  * cada subclasse decide como calcular sua própria taxa.
  */
+
+// ABSTRACT: tem um método abstract
+// IMPLEMENTS: a classe implementa a interface Notificavel
+// COMPARABLE<>: exige a implementação de um método compareTo()
 public abstract class Pagamento implements Notificavel, Comparable<Pagamento> {
 
+    // ATRIBUTO FINAL: Depois que recebe seu valor uma vez, ELE NUNCA MAIS PODE SER ALTERADO
     private final String idTransacao;
     private final double valor;
     private final LocalDate data;
@@ -38,13 +43,15 @@ public abstract class Pagamento implements Notificavel, Comparable<Pagamento> {
     public abstract double calcularTaxa();
 
     // TODO 1: implemente valorTotal() = valor + calcularTaxa()
-    public double valorTotal() {
-        return valor + calcularTaxa();
+    public double valorTotal()
+    {
+        return valorTotal() + calcularTaxa();
     }
 
     // TODO 2: implemente a ordem natural (compareTo) pelo valorTotal(), do menor para o maior
     @Override
-    public int compareTo(Pagamento outro) {
+    public int compareTo(Pagamento outro)
+    {
         return Double.compare(valorTotal(), outro.valorTotal());
     }
 
