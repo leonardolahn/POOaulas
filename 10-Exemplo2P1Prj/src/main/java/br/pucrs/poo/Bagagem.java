@@ -6,7 +6,8 @@ public abstract class Bagagem
     private double peso;
     private Prioridade prioridade;
 
-    public Bagagem(String nome, double peso, Prioridade prioridade)
+    public Bagagem(String nome, double peso,
+        Prioridade prioridade)
     {
         this.nome = nome;
         this.peso = peso;
@@ -26,11 +27,13 @@ public abstract class Bagagem
         return prioridade;
     }
 
-    public abstract double calcularCusto();
+    public abstract double calculaCusto();
 
     @Override
     public String toString()
     {
-        return "Cliente: " + getNome();
+        StringBuilder aux = new StringBuilder();
+        aux.append("Cliente: ").append(getNome());
+        return aux.toString();
     }
 }
