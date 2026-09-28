@@ -45,11 +45,11 @@ public abstract class Pagamento implements Notificavel, Comparable<Pagamento> {
     // TODO 1: implemente valorTotal() = valor + calcularTaxa()
     public double valorTotal()
     {
-        return valorTotal() + calcularTaxa();
+        return valor + calcularTaxa();
     }
 
     // TODO 2: implemente a ordem natural (compareTo) pelo valorTotal(), do menor para o maior
-    @Override
+    @Override 
     public int compareTo(Pagamento outro)
     {
         return Double.compare(valorTotal(), outro.valorTotal());

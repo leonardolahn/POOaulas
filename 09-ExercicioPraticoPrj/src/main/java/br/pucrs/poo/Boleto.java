@@ -20,6 +20,6 @@ public class Boleto extends Pagamento {
     @Override
     public void enviarNotificacao()
     {
-        System.out.println("Boleto gerado.");
+        System.out.println("Boleto gerado");
     }
 }

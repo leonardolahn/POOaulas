@@ -13,16 +13,16 @@ public class CadastroBagagens
 
     public String listar()
     {
+        double custoTotal = 0;
         StringBuilder aux = new StringBuilder("===Lista de Bagagens===");
-        double totalCusto = 0;
         for (Bagagem b : bagagens)
         {
             double custo = b.calculaCusto();
             aux.append(b.toString()).append("\n")
                .append("Custo: ").append(custo).append("\n");
-            totalCusto += custo;
+            custoTotal += custo;
         }
-        aux.append("Custo total das bagagens: ").append(totalCusto);
+        aux.append("Custo total das bagagens: ").append(custoTotal);
         return aux.toString();
     }
 
@@ -31,7 +31,6 @@ public class CadastroBagagens
         int qtdBagagensDeMao = 0;
         for (Bagagem b : bagagens)
         {
-            // instanceof filtra um tipo de classe pelas subclasses
             if (b instanceof BagagemDeMao)
             {
                 qtdBagagensDeMao++;

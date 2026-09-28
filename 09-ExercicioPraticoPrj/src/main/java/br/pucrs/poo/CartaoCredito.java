@@ -20,9 +20,8 @@ public class CartaoCredito extends Pagamento implements Estornavel {
     @Override
     public double calcularTaxa()
     {
-        return (0.035 * valorTotal()) + (0.5 * (getParcelas() - 1));
+        return (valorTotal() * 0.035) + (0.50 * (parcelas - 1));
     }
-
 
     // TODO: imprima uma mensagem informando o número de parcelas
     @Override

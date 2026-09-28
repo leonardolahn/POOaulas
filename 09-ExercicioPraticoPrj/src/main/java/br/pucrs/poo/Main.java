@@ -21,7 +21,7 @@ public class Main {
 
         // TODO 4: percorra a lista chamando enviarNotificacao() em cada pagamento,
         // tratando-os de forma polimórfica (sem checar o tipo de cada um).
-        for (Pagamento p: pagamentos)
+        for (Pagamento p : pagamentos)
         {
             p.enviarNotificacao();
         }
@@ -36,8 +36,6 @@ public class Main {
 
         // TODO 6: crie um Comparator<Pagamento> que ordene por DATA (mais antigo primeiro)
         // e ordene a lista com ele. Duas formas possíveis:
-        //   Collections.sort(pagamentos, comparator);
-        //   pagamentos.sort(Comparator.comparing(Pagamento::getData));
         pagamentos.sort(Comparator.comparing(Pagamento::getData));
         for (Pagamento p : pagamentos)
         {
@@ -48,10 +46,9 @@ public class Main {
         // chame estornar() e imprima o resultado (use "if (p instanceof Estornavel e) { ... }").
         for (Pagamento p : pagamentos)
         {
-
-            if (p instanceof Estornavel e) // testa se o objeto real guardado em "p" também implementa "e" Estornavel;
+            if (p instanceof Estornavel e)
             {
-                System.out.println(e.estornar()); // chama estornar() em "e" e imprime o resultado (true ou false)
+                System.out.println(e.estornar());
             }
         }
     }

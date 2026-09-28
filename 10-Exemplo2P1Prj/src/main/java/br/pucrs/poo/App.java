@@ -5,14 +5,12 @@ public class App
     public static void main(String[] args)
     {
         CadastroBagagens cadastro = new CadastroBagagens();
-
-        BagagemNormal b1 = new BagagemNormal("Leonardo", 20, Prioridade.NORMAL);
-        BagagemDeMao b2 = new BagagemDeMao("Jorge", 23, Prioridade.PRIORITARIA);
-        BagagemFragil b3 = new BagagemFragil("João", 10, Prioridade.NORMAL);
-
+        BagagemNormal b1 = new BagagemNormal("Leonardo", 27, Prioridade.NORMAL);
+        BagagemDeMao b2 = new BagagemDeMao("Isa", 30, Prioridade.PRIORITARIA);
+        BagagemFragil b3 = new BagagemFragil("Chico", 10, Prioridade.NORMAL);
         try
         {
-            BagagemDeMao invalida = new BagagemDeMao(null, 24, Prioridade.NORMAL);
+            BagagemNormal invalida = new BagagemNormal(null, 12, Prioridade.PRIORITARIA);
         }
         catch (IllegalArgumentException e)
         {
