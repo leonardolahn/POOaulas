@@ -13,7 +13,7 @@ import java.util.TreeSet;
  * em que deve ser implementado. Os corpos atuais são apenas provisórios,
  * para que o projeto compile desde o início.
  */
-public class Perfil {
+public class Perfil implements Comparable<Perfil> {
 
     private final String handle; // ex.: "@ana" — único na rede
     private final String nome;
@@ -148,7 +148,7 @@ public class Perfil {
     public Set<Perfil> mutuos() {
         // TODO (Passo 4)
         // Cria um novo conjunto de todos os que eu sigo (para a nova comparação)
-        Set<Perfil> r = new HashSet<>(seguindo);
+        Set<Perfil> r = new TreeSet<>(seguindo);
         // Faz um interseção de todos que eu sigo e que estão me seguindo de volta.
         r.retainAll(seguidores);
         // Retorna o conjunto depois desse teste
@@ -158,7 +158,7 @@ public class Perfil {
     /** Quem eu sigo e não me segue (seguindo − seguidores). */
     public Set<Perfil> naoMeSegueDeVolta() {
         // Cria um novo conjunto de todos os que eu sigo (para a nova comparação)
-        Set<Perfil> r = new HashSet<>(seguindo);
+        Set<Perfil> r = new TreeSet<>(seguindo);
         // Remove todos (diferença) os que eu sigo e que não me seguem de volta.
         r.removeAll(seguidores);
         // Retorna o conjunto depois desse teste
@@ -169,7 +169,7 @@ public class Perfil {
     public Set<Perfil> fas() {
         // TODO (Passo 4)
         // Cria um novo conjunto de todos os que me seguem
-        Set<Perfil> r = new HashSet<>(seguidores);
+        Set<Perfil> r = new TreeSet<>(seguidores);
         // Remove todos (diferença) os que me seguem mas eu não sigo de volta
         r.removeAll(seguindo);
         // Retorna o conjunto depois desse teste
@@ -197,7 +197,20 @@ public class Perfil {
     /** Pessoas seguidas por quem eu sigo, menos eu mesmo e quem já sigo. */
     public Set<Perfil> sugestoes() {
         // TODO (Passo 6): união -> remover a si mesmo -> remover quem já sigo
-        return new HashSet<>();
+        // Cria um novo conjunto de todos os que eu sigo
+        Set<Perfil> r = new TreeSet<>(seguindo);
+        // Percorre todos os perfis 'p' que eu estou seguindo
+        for (Perfil p : seguindo)
+        {
+            // Faz uma união de todos os perfis que determinado perfil que eu sigo, segue
+            r.addAll(p.seguindo);
+        }
+        // Remove eu mesmo desse conjunto
+        r.remove(this);
+        // Remove todos os que eu já sigo.
+        r.removeAll(seguindo);
+        // Retorna o conjunto
+        return r;
     }
 
     // ------------------------------------------------------------------
@@ -208,4 +221,10 @@ public class Perfil {
     // Passos 4 a 6, "new HashSet<>" por "new TreeSet<>".
     //
     // public int compareTo(Perfil outro) { ... }
+
+    @Override
+    public int compareTo(Perfil outro)
+    {
+        return handle.compareTo(outro.handle);
+    }
 }

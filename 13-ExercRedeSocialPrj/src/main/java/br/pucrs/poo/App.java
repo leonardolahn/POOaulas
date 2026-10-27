@@ -25,35 +25,35 @@ public class App {
         teste.add(new Perfil("@bruno", "Bruno"));
         System.out.println("Perfis no conjunto de teste: " + teste.size());
 
-//         // ---------- Carga da rede (leitura já pronta) ----------
-//         Map<String, Perfil> rede = LeitorRede.lerPerfis(pasta + "/perfis.csv");
-//         System.out.println("Perfis carregados: " + rede.size());
-//         LeitorRede.lerConexoes(pasta + "/conexoes.csv", rede);
+        // ---------- Carga da rede (leitura já pronta) ----------
+        Map<String, Perfil> rede = LeitorRede.lerPerfis(pasta + "/perfis.csv");
+        System.out.println("Perfis carregados: " + rede.size());
+        LeitorRede.lerConexoes(pasta + "/conexoes.csv", rede);
 
-//         Perfil ana = rede.get("@ana");
-//         Perfil bruno = rede.get("@bruno");
-//         Perfil davi = rede.get("@davi");
+        Perfil ana = rede.get("@ana");
+        Perfil bruno = rede.get("@bruno");
+        Perfil davi = rede.get("@davi");
 
-//         // ---------- Passo 2: testes de seguir ----------
-//         System.out.println("ana segue a si mesma? " + ana.seguir(ana));
-//         System.out.println("ana segue bruno de novo? " + ana.seguir(bruno));
+        // ---------- Passo 2: testes de seguir ----------
+        System.out.println("ana segue a si mesma? " + ana.seguir(ana));
+        System.out.println("ana segue bruno de novo? " + ana.seguir(bruno));
 
-//         // ---------- Painel ----------
-//         // Para testar outros perfis, troque os handles abaixo (ex.: "@bruno").
-//         exibirPainel(ana, davi);
-//     }
+        // ---------- Painel ----------
+        // Para testar outros perfis, troque os handles abaixo (ex.: "@bruno").
+        exibirPainel(ana, davi);
+    } 
 
-//     private static void exibirPainel(Perfil p, Perfil outro) {
-//         System.out.println();
-//         System.out.println("=== Painel de " + p.getHandle() + " ===");
-//         // Passo 7: troque p.getSeguindo() por new TreeSet<>(p.getSeguindo())
-//         //          (e o mesmo para getSeguidores) para exibir em ordem alfabética.
-//         System.out.println("Seguindo:               " + p.getSeguindo());
-//         System.out.println("Seguidores:             " + p.getSeguidores());
-//         System.out.println("Mútuos:                 " + p.mutuos());
-//         System.out.println("Não me segue de volta:  " + p.naoMeSegueDeVolta());
-//         System.out.println("Fãs:                    " + p.fas());
-//         System.out.println("Em comum com " + outro.getHandle() + ":     " + p.seguidosEmComum(outro));
-//         System.out.println("Sugestões para seguir:  " + p.sugestoes());
+    private static void exibirPainel(Perfil p, Perfil outro) {
+        System.out.println();
+        System.out.println("=== Painel de " + p.getHandle() + " ===");
+        // Passo 7: troque p.getSeguindo() por new TreeSet<>(p.getSeguindo())
+        //          (e o mesmo para getSeguidores) para exibir em ordem alfabética.
+        System.out.println("Seguindo:               " + p.getSeguindo());
+        System.out.println("Seguidores:             " + p.getSeguidores());
+        System.out.println("Mútuos:                 " + p.mutuos());
+        System.out.println("Não me segue de volta:  " + p.naoMeSegueDeVolta());
+        System.out.println("Fãs:                    " + p.fas());
+        System.out.println("Em comum com " + outro.getHandle() + ":     " + p.seguidosEmComum(outro));
+        System.out.println("Sugestões para seguir:  " + p.sugestoes());
      }
 }
